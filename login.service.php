@@ -5,13 +5,15 @@ ob_start();
 include('connect.inc.php');
 
 $email = $_GET['email'];
+$senha = md5($_GET['senha']);
 
 if (isset($_GET['email'])) {
     $email = $_GET['email'];
 }
-if ($email != null) {
 
-    $verifica_email = "SELECT * FROM usuarios WHERE Email LIKE '%$email%'";
+if ($email != null && $senha != null) {
+
+    $verifica_email = "SELECT * FROM usuarios WHERE Email='$email' AND Senha='$senha'";
     $result_verifica_email = $conn->query($verifica_email);
 
     if ($result_verifica_email->num_rows != 0) {

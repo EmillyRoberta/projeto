@@ -14,6 +14,8 @@ function verificaConexao($conn, $insere)
     }
 }
 
+$senha = md5($_POST['senha']);
+
 if (isset($_POST['nome'])) {
     $nome = $_POST['nome'];
 }
@@ -28,8 +30,8 @@ if ($nome != null && $email != null) {
     $verifica_usuario = "SELECT * FROM usuarios WHERE Email LIKE '%$email%'";
     $result_verifica_usuario = $conn->query($verifica_usuario);
 
-    $insere_usuario = "INSERT INTO usuarios (Nome, Email, Pontos)
-                    VALUES ('$nome', '$email', 0)";
+    $insere_usuario = "INSERT INTO usuarios (Nome, Email, Pontos, Senha)
+                    VALUES ('$nome', '$email', 0, '$senha')";
 
 
     if ($result_verifica_usuario->num_rows != 0) {
