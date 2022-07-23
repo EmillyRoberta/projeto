@@ -1,6 +1,6 @@
 <script>
     function validaCadastro() {
-        if (document.getElementById("email").value === "") {
+        if (document.getElementById("email").value === "" || document.getElementById("senha").value === "") {
             alert('Por favor, preencha todos os campos obrigatórios');
             return false
         }
@@ -37,11 +37,17 @@
                 </div>
                 <hr>
                 <form method="GET" action="login.service.php" enctype="multipart/form-data" onsubmit="return validaCadastro(this)">
+
                     <div class="form-group">
                         <label for="exampleInputEmail1">Endereço de email</label>
                         <input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp" placeholder="Seu email">
-
                     </div>
+
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Senha</label>
+                        <input type="password" class="form-control" id="senha" name="senha" aria-describedby="emailHelp">
+                    </div>
+
                     <div class="row">
                         <div class="col-9"><a href="cadastro.php">Cadastre-se</a></div>
                         <div class="col-3 pr-5">

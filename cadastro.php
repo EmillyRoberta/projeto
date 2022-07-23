@@ -1,6 +1,7 @@
 <script>
     function validaCadastro() {
-        if (document.getElementById("nome").value === "" || document.getElementById("email").value === "") {
+        if (document.getElementById("nome").value === "" || document.getElementById("email").value === "" ||
+            document.getElementById("senha").value === "") {
             alert('Por favor, preencha todos os campos obrigatórios');
             return false
         }
@@ -36,6 +37,10 @@
                         <label for="exampleInputEmail1">Endereço de email</label>
                         <input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp" placeholder="Seu email">
 
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Senha</label>
+                        <input type="password" class="form-control" id="senha" name="senha" aria-describedby="emailHelp">
                     </div>
 
                     <div class="d-flex justify-content-end"><button type="submit" class="btn btn-primary">cadastrar</button></div>
