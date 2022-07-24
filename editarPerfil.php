@@ -51,9 +51,10 @@ if (isset($_SESSION['id_email'])) {
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav">
                     <a class="nav-item nav-link active" href="index.php">Home <span class="sr-only">(Página atual)</span></a>
-                    <a class="nav-item nav-link" href="#">Sobre</a>
+                    <a class="nav-item nav-link" href="sobre.php">Sobre</a>
                     <a class="nav-item nav-link" href="#">Postar Noticia</a>
                     <a class="nav-item nav-link disabled" href="editarPerfil.php">Editar Perfil</a>
+                    <a class="nav-item nav-link" href="listagem.service.php">Listagens</a>
                 </div>
             </div>
         </nav>
