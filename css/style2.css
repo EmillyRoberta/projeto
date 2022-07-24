@@ -6,8 +6,14 @@ nav {
 }
 
 body {
-    background: linear-gradient(#082767, #6687f7) no-repeat;
+    padding-top: 0vh;
+    background: linear-gradient(#082767, #da18e0) no-repeat;
+    margin: 0px;
+    background-color: #082767;
+    background-size: cover;
+    
 }
+
 
 p {
     color: #ffffff;
