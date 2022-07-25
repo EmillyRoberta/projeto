@@ -42,29 +42,25 @@ if (isset($_SESSION['id_email'])) {
 </head>
 
 <body>
-    <div class="container-fluid d-flex pr-0 pl-0" style="height:100%;flex-direction: column;">
+<body>
+    <div class="container-fluid" style="padding:0">
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <a class="navbar-brand" href="#">Navbar</a>
+            <a class="navbar-brand" href="#">Insta Fake</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Alterna navegação">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav">
-                    <a class="nav-item nav-link active" href="index.php">Home <span class="sr-only">(Página atual)</span></a>
-<<<<<<< HEAD
-                    <a class="nav-item nav-link" href="#">Sobre</a>
+                    <a class="nav-item nav-link active" href="index.php">Pagina Inicial <span class="sr-only">(Página atual)</span></a>
                     <a class="nav-item nav-link" href="cadastroNoticias.php">Postar Noticia</a>
                     <a class="nav-item nav-link" href="exibirNoticias.php">Editar Noticias</a>
-=======
-                    <a class="nav-item nav-link" href="sobre.php">Sobre</a>
-                    <a class="nav-item nav-link" href="#">Postar Noticia</a>
-                
->>>>>>> 8e1b124821cc154a53cac3486a5a7dbcc7573550
                     <a class="nav-item nav-link disabled" href="editarPerfil.php">Editar Perfil</a>
                     <a class="nav-item nav-link" href="listagem.service.php">Listagens</a>
+                    <a class="nav-item nav-link" href="sobre.php">Sobre</a>
                 </div>
             </div>
         </nav>
+    </div>
 
         <div class="container-fluid d-flex justify-content-center align-items-center" style="height:100%">
             <div class="card shadow-sm bg-white rounded">

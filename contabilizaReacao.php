@@ -1,4 +1,5 @@
 <html>
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -6,6 +7,7 @@
     <link rel="stylesheet" type="text/css" href="css/style2.css">
     <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
+
 </html>
 
 <?php
@@ -25,23 +27,22 @@ while ($tabela = mysqli_fetch_object($sql)) {
 }
 
 
-if ($reacao == 0){
+if ($reacao == 0) {
     $sql = mysqli_query($conn, "UPDATE usuarios 
                                 SET Pontos = Pontos + 1
                                 WHERE ID = $userID");
 }
 
-if ($reacao == 1){
-        $sql = mysqli_query($conn, "UPDATE usuarios 
+if ($reacao == 1) {
+    $sql = mysqli_query($conn, "UPDATE usuarios 
                                     SET Pontos = Pontos - 2
                                     WHERE ID = $userID");
-    
 }
-    
-if ($reacao == 2){
-        $sql = mysqli_query($conn, "UPDATE usuarios 
+
+if ($reacao == 2) {
+    $sql = mysqli_query($conn, "UPDATE usuarios 
                                     SET Pontos = Pontos - 4
-                                    WHERE ID = $userID"); 
+                                    WHERE ID = $userID");
 }
 
 echo ("<p>Reação Computada com Sucesso</p>");

@@ -93,6 +93,3 @@ if (!empty($imagem["name"])) {
         echo "<p><font face=\"Verdana\"  color=\"#FFF\">Alteração realizada com sucesso</font></p>";
     }
 }
-
-?>
-

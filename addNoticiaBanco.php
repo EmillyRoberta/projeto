@@ -13,22 +13,23 @@
 </head>
 
 <body style="border:solid">
-    <div class="container-fluid" style="padding:0">
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <a class="navbar-brand" href="#">Navbar</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Alterna navegação">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                <div class="navbar-nav">
-                    <a class="nav-item nav-link active" href="index.php">Home <span class="sr-only">(Página atual)</span></a>
-                    <a class="nav-item nav-link" href="#">Sobre</a>
-                    <a class="nav-item nav-link" href="cadastroNoticias.php">Postar Noticia</a>
-                    <a class="nav-item nav-link" href="exibirNoticias.php">Editar Noticias</a>
-                    <a class="nav-item nav-link disabled" href="editarPerfil.php">Editar Perfil</a>
-                </div>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="index.php">Insta Fake</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Alterna navegação">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <a class="nav-item nav-link active" href="index.php">Pagina Inicial <span class="sr-only">(Página atual)</span></a>
+                <a class="nav-item nav-link" href="cadastroNoticias.php">Postar Noticia</a>
+                <a class="nav-item nav-link" href="exibirNoticias.php">Editar Noticias</a>
+                <a class="nav-item nav-link disabled" href="editarPerfil.php">Editar Perfil</a>
+                <a class="nav-item nav-link" href="listagem.service.php">Listagens</a>
+                <a class="nav-item nav-link" href="sobre.php">Sobre</a>
             </div>
-        </nav>
+        </div>
+    </nav>
+    </div>
     </div>
 
 </html>
@@ -116,12 +117,12 @@ if (!empty($imagem["name"])) {
             $result = $conn->query($sql);
 
             if ($result->num_rows > 0) {
-               
-                while($row = $result->fetch_assoc()) {
+
+                while ($row = $result->fetch_assoc()) {
                     $id_user = $row["ID"];
                 }
-         
-                echo($id_user);
+
+                echo ($id_user);
             }
         }
 
