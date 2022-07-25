@@ -31,6 +31,10 @@
         </nav>
     </div>
 
+    </body>
+
+</html>
+
 <?php
 
 include("connect.inc.php");
@@ -60,23 +64,4 @@ while ($tabela = mysqli_fetch_object($sql)) {
 }
 
 
-
 ?>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-</body>
-
-</html>
