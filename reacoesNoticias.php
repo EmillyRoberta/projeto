@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/styleHome.css">
+    <link rel="stylesheet" href="css/style2.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
     <title>Document</title>
@@ -24,7 +24,6 @@
                     <a class="nav-item nav-link active" href="index.php">Home <span class="sr-only">(Página atual)</span></a>
                     <a class="nav-item nav-link" href="#">Sobre</a>
                     <a class="nav-item nav-link" href="#">Postar Noticia</a>
-                    <a class="nav-item nav-link" href="exibirNoticias.php">Editar Noticias</a>
                     <a class="nav-item nav-link disabled" href="editarPerfil.php">Editar Perfil</a>
                 </div>
             </div>
@@ -32,6 +31,10 @@
 
 
     </div>
+    <?php
+
+    ?>
+
 
 </body>
 
@@ -58,7 +61,7 @@ while ($tabela = mysqli_fetch_object($sql)) {
     echo "<p><br></br>Pontos Na Rede: $tabela->Pontos</p><br>";
     // Exibi a foto
     echo "<h6 id='circle'><img src='$tabela->Imagem"  . "' alt='Foto de exibição ' /><br /></h6>";
-    echo "<p><a id='meio' href='reacoesNoticias.php?id=$tabela->ID'>Ver Mais</a></p><br><br><br><br>";
+    echo "<p><a id='meio' href='edicaoNoticias.php?id=$tabela->ID'>Ver Mais</a></p><br><br><br><br>";
     
 }
 ?>
