@@ -24,7 +24,7 @@
                     <a class="nav-item nav-link active" href="index.php">Pagina Inicial <span class="sr-only">(Página atual)</span></a>
                     <a class="nav-item nav-link" href="cadastroNoticias.php">Postar Noticia</a>
                     <a class="nav-item nav-link" href="exibirNoticias.php">Editar Noticias</a>
-                    <a class="nav-item nav-link disabled" href="editarPerfil.php">Editar Perfil</a>
+                    <a class="nav-item nav-link" href="editarPerfil.php">Editar Perfil</a>
                     <a class="nav-item nav-link" href="listagem.service.php">Listagens</a>
                     <a class="nav-item nav-link" href="sobre.php">Sobre</a>
                 </div>
