@@ -1,18 +1,24 @@
+<?php
+$idN = filter_input(INPUT_GET, "id", FILTER_SANITIZE_NUMBER_INT); //captura o id do evento passado pelo href
+
+?>
+
 <!DOCTYPE html>
-<html lang="en" style="border:solid red;height:100%">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/styleHome.css">
+    <link rel="stylesheet" href="css/style2.css">
+    <link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
     <title>Document</title>
 </head>
 
-<body style="border:solid;">
+<body style="border:solid">
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <a class="navbar-brand" href="index.php">Insta Fake</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Alterna navegação">
@@ -31,40 +37,36 @@
     </nav>
     </div>
 
-    <div class="container-fluid d-flex mt-5 justify-content-center align-items-center" style="flex-direction: column;height:100%">
-        <!-- <div class="card shadow-sm bg-white rounded">
-            <div class="card-body">
-
-                <div class="row"> -->
-
-
-
-        <?php
-
-        include("connect.inc.php");
-
-        session_start();
-
-        $sql = mysqli_query($conn, "SELECT n.Texto, u.Nome, n.Imagem, n.ID, u.Pontos FROM noticias as n
-                            INNER JOIN usuarios as u
-                            ON n.ID_Usuario = u.ID 
-                            ORDER BY n.ID DESC"); //realiza uma consulta a partir do id do email
-
-
-        // Printa as informações da tabela
-        while ($tabela = mysqli_fetch_object($sql)) {
-
-            // Exibi a foto
-            echo "<div class='card shadow-sm bg-white rounded'><div class='card-body'><div class='row'><div class='col-5'><img src='$tabela->Imagem"  . "' alt='Foto de exibição ' /></div><br />";
-            echo "<div class='col-7'>Texto da postagem: $tabela->Texto<br>";
-            echo "</br>Autor: $tabela->Nome<br>";
-            echo "</br>Pontos Na Rede: $tabela->Pontos<br>";
-            echo "<div class='d-flex justify-content-center mt-4'><a id='meio' href='reacoesNoticias.php?id=$tabela->ID'>Ver Mais</a></div></div></div></div></div><br /><br />";
-        }
-        ?>
-
-    </div>
-
 </body>
 
 </html>
+
+
+<?php
+
+include("connect.inc.php");
+
+$id = filter_input(INPUT_GET, "id", FILTER_SANITIZE_NUMBER_INT); //captura o id do evento passado pelo href
+
+
+$sql = mysqli_query($conn, "SELECT n.Titulo, n.Texto, u.Nome, n.Imagem, n.ID, u.Pontos FROM noticias as n
+                            INNER JOIN usuarios as u
+                            ON n.ID = $id "); //realiza uma consulta a partir do id do email
+
+
+// Printa as informações da tabela
+while ($tabela = mysqli_fetch_object($sql)) {
+
+    echo ("<br></br>");
+    echo "<h6 id='circle'><img src='$tabela->Imagem"  . "' alt='Foto de exibição ' /><br /></h6>";
+    echo "<p><br></br>Titulo da postagem: $tabela->Titulo</p>";
+    echo "<p>Texto da postagem: $tabela->Texto</p>";
+    echo "<p><br>Autor: $tabela->Nome</p>";
+    echo "<p>Pontos Na Rede: $tabela->Pontos</p><br>";
+
+    echo "<a href='contabilizaReacao.php?reac=0&id=$idN' ><img src='img/buttons/like.png"  . "' </a>";
+    echo "<a href='contabilizaReacao.php?reac=1&id=$idN'><img src='img/buttons/dislike.png"  . "' alt='Foto de exibição ' <p/>";
+    echo "<a href='contabilizaReacao.php?reac=2&id=$idN'><img src='img/buttons/fake.png"  . "' alt='Foto de exibição ' <p/><br />";
+    echo "<p><a id='meio' href='edicaoNoticias.php?id=$tabela->ID'>Voltar</a></p><br><br><br><br>";
+}
+?>
