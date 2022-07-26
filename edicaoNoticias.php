@@ -1,3 +1,17 @@
+<?php
+$idP = filter_input(INPUT_GET, "id", FILTER_SANITIZE_NUMBER_INT); //captura o id do evento passado pelo href
+?>
+
+<script>
+    function validaEdicao() {
+        if (document.getElementById("titulo").value === "" || document.getElementById("texto").value === "") {
+            alert('Pelo menos Titulo e Descrição devem ser alterados');
+
+            return false
+        }
+    }
+</script>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -6,7 +20,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/styleHome.css">
+    <link rel="stylesheet" href="css/style2.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
     <title>Document</title>
@@ -31,31 +45,31 @@
     </nav>
     </div>
 
-</body>
+    <div id="container">
+
+        <h1>Editar Noticia</h1>
+
+        <form action='alteraNoticiaBanco.php' method="POST" enctype="multipart/form-data" name='formulario' onsubmit="return validaEdicao(this)">
+            <div>
+                <label for="nome">Novo Titulo:</label>
+                <input type="text" id="titulo" name="titulo" /> <br></br>
+            </div>
+            <div>
+                <label for="descrição">Nova Descrição:</label>
+                <input type="text" id="texto" name="texto" /> <br></br>
+            </div>
+
+            <div>
+                <label for="img">Nova Imagem:</label>
+                <input type="file" id="img" name="img" accept="image/*"> <br></br>
+            </div>
+            <div>
+                <input type="hidden" name="idP" value="<?= $idP ?>" /> <br></br>
+            </div>
+
+            <div>
+                <label><input type="submit" name="botao" value="Enviar" /></label></p>
+            </div>
+    </div>
 
 </html>
-
-
-<?php
-
-include("connect.inc.php");
-
-session_start();
-
-$sql = mysqli_query($conn, "SELECT n.Texto, u.Nome, n.Imagem, n.ID, u.Pontos FROM noticias as n
-                            INNER JOIN usuarios as u
-                            ON n.ID_Usuario = u.ID 
-                            ORDER BY n.ID DESC"); //realiza uma consulta a partir do id do email
-
-
-// Printa as informações da tabela
-while ($tabela = mysqli_fetch_object($sql)) {
-
-    echo "<p><br></br>Texto da postagem: $tabela->Texto</p><br>";
-    echo "<p><br></br>Autor: $tabela->Nome</p><br>";
-    echo "<p><br></br>Pontos Na Rede: $tabela->Pontos</p><br>";
-    // Exibi a foto
-    echo "<h6 id='circle'><img src='$tabela->Imagem"  . "' alt='Foto de exibição ' /><br /></h6>";
-    echo "<p><a id='meio' href='reacoesNoticias.php?id=$tabela->ID'>Ver Mais</a></p><br><br><br><br>";
-}
-?>
