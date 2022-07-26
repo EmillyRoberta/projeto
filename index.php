@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" style="border:solid red;height:100%">
 
 <head>
     <meta charset="UTF-8">
@@ -12,7 +12,7 @@
     <title>Document</title>
 </head>
 
-<body style="border:solid">
+<body style="border:solid;">
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <a class="navbar-brand" href="index.php">Insta Fake</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Alterna navegação">
@@ -31,31 +31,40 @@
     </nav>
     </div>
 
-</body>
+    <div class="container-fluid d-flex mt-5 justify-content-center align-items-center" style="flex-direction: column;height:100%">
+        <!-- <div class="card shadow-sm bg-white rounded">
+            <div class="card-body">
 
-</html>
+                <div class="row"> -->
 
 
-<?php
 
-include("connect.inc.php");
+        <?php
 
-session_start();
+        include("connect.inc.php");
 
-$sql = mysqli_query($conn, "SELECT n.Texto, u.Nome, n.Imagem, n.ID, u.Pontos FROM noticias as n
+        session_start();
+
+        $sql = mysqli_query($conn, "SELECT n.Texto, u.Nome, n.Imagem, n.ID, u.Pontos FROM noticias as n
                             INNER JOIN usuarios as u
                             ON n.ID_Usuario = u.ID 
                             ORDER BY n.ID DESC"); //realiza uma consulta a partir do id do email
 
 
-// Printa as informações da tabela
-while ($tabela = mysqli_fetch_object($sql)) {
+        // Printa as informações da tabela
+        while ($tabela = mysqli_fetch_object($sql)) {
 
-    echo "<p><br></br>Texto da postagem: $tabela->Texto</p><br>";
-    echo "<p><br></br>Autor: $tabela->Nome</p><br>";
-    echo "<p><br></br>Pontos Na Rede: $tabela->Pontos</p><br>";
-    // Exibi a foto
-    echo "<h6 id='circle'><img src='$tabela->Imagem"  . "' alt='Foto de exibição ' /><br /></h6>";
-    echo "<p><a id='meio' href='reacoesNoticias.php?id=$tabela->ID'>Ver Mais</a></p><br><br><br><br>";
-}
-?>
+            // Exibi a foto
+            echo "<div class='card shadow-sm bg-white rounded'><div class='card-body'><div class='row'><div class='col-5'><img src='$tabela->Imagem"  . "' alt='Foto de exibição ' /></div><br />";
+            echo "<div class='col-7'>Texto da postagem: $tabela->Texto<br>";
+            echo "</br>Autor: $tabela->Nome<br>";
+            echo "</br>Pontos Na Rede: $tabela->Pontos<br>";
+            echo "<div class='d-flex justify-content-center mt-4'><a id='meio' href='reacoesNoticias.php?id=$tabela->ID'>Ver Mais</a></div></div></div></div></div><br /><br />";
+        }
+        ?>
+
+    </div>
+
+</body>
+
+</html>
