@@ -4,7 +4,7 @@ $idN = filter_input(INPUT_GET, "id", FILTER_SANITIZE_NUMBER_INT); //captura o id
 ?>
 
 <!DOCTYPE html>
-<html lang="en" style='height:100%;'>
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
@@ -35,10 +35,9 @@ $idN = filter_input(INPUT_GET, "id", FILTER_SANITIZE_NUMBER_INT); //captura o id
             </div>
         </div>
     </nav>
-    </div>
 
-    <div class="container-fluid d-flex justify-content-center align-items-center" style="height:100%">
-        <div class="card shadow-sm bg-white rounded mt-5" style="height:100%">
+    <div class="container-fluid d-flex justify-content-center align-items-center">
+        <div class="card shadow-sm bg-white rounded mt-5">
             <div class="card-body">
 
                 <?php
@@ -50,7 +49,7 @@ $idN = filter_input(INPUT_GET, "id", FILTER_SANITIZE_NUMBER_INT); //captura o id
 
                 $sql = mysqli_query($conn, "SELECT n.Titulo, n.Texto, u.Nome, n.Imagem, n.ID, u.Pontos FROM noticias as n
                             INNER JOIN usuarios as u
-                            ON n.ID = $id "); //realiza uma consulta a partir do id do email
+                            ON n.ID = $id LIMIT 1"); //realiza uma consulta a partir do id do email
 
 
                 // Printa as informações da tabela
