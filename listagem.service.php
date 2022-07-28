@@ -95,7 +95,6 @@
                                 <tr>
                                     <th scope="col">Titulo</th>
                                     <th scope="col">Texto</th>
-                                    <th scope="col">Imagem</th>
                                     <th scope="col">Id_Usuario</th>
 
                                 </tr>
@@ -142,7 +141,7 @@
                             <thead>
                                 <tr>
                                     <th scope="col">Título</th>
-                                    <th scope="col">Quantidade de notícias falsas</tr>
+                                    <th scope="col">Notícia falsa?</tr>
                                 </tr>
                             </thead>
                             <tbody>
@@ -150,7 +149,11 @@
                                 while ($dataa = mysqli_fetch_assoc($noticiasFake)) {
                                     echo "<tr>";
                                     echo "<td>" . $dataa['Titulo'] . "</td>";
-                                    echo "<td>" . $dataa['Fake'] . "</td>";
+                                    if($dataa['Fake']==1){
+                                        echo "<td>Esta notícia é falsa</td>";
+                                    }else{
+                                        echo "<td>Esta notícia não é falsa</td>";
+                                    }
                                 }
                                 ?>
                             </tbody>
