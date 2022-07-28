@@ -30,6 +30,7 @@ $idN = filter_input(INPUT_GET, "id", FILTER_SANITIZE_NUMBER_INT); //captura o id
                 <a class="nav-item nav-link" href="exibirNoticias.php">Editar Noticias</a>
                 <a class="nav-item nav-link" href="editarPerfil.php">Editar Perfil</a>
                 <a class="nav-item nav-link" href="listagem.service.php">Listagens</a>
+                <a class="nav-item nav-link" href="ranking.php">Ranking</a>
                 <a class="nav-item nav-link" href="sobre.php">Sobre</a>
             </div>
         </div>
