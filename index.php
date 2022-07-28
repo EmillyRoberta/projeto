@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" style="border:solid red;height:100%">
+<html lang="en" style="height:100%">
 
 <head>
     <meta charset="UTF-8">
@@ -12,7 +12,7 @@
     <title>Document</title>
 </head>
 
-<body style="border:solid;">
+<body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <a class="navbar-brand" href="index.php">Insta Fake</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Alterna navegação">
@@ -32,12 +32,6 @@
     </div>
 
     <div class="container-fluid d-flex mt-5 justify-content-center align-items-center" style="flex-direction: column;height:100%">
-        <!-- <div class="card shadow-sm bg-white rounded">
-            <div class="card-body">
-
-                <div class="row"> -->
-
-
 
         <?php
 

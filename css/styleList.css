@@ -5,3 +5,11 @@ a{
     padding: 7px 10px;
     margin: 05px;
 }
+
+body {
+    padding-top: 0vh;
+    background: linear-gradient(#082767, #da18e0) no-repeat;
+    margin: 0px;
+    /* background-color: #082767; */
+    background-size: cover;
+}

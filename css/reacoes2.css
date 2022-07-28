@@ -1,0 +1,82 @@
+nav {
+    background-color: #000000a1;
+    text-align: center;
+    transform: scale(1.0);
+
+}
+
+body {
+    padding-top: 0vh;
+    background: linear-gradient(#082767, #da18e0) no-repeat;
+    margin: 0px;
+    background-color: #082767;
+    background-size: cover;
+    
+}
+
+
+p {
+    text-decoration: none;
+    font-size: 18px;
+}
+
+a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: bold;
+    text-align: center;
+}
+
+#estilo {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: bold;
+
+}
+
+#circle {
+    background-color: #aaa;
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    overflow: hidden;
+    position: relative;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+
+
+}
+
+
+#meio {
+    color: #ffffff;
+    font-weight: bold;
+    background-color: #81126d;
+    color: #FFF;
+    border-radius: 90px;
+
+}
+
+#num_centro {
+    color: #000000;
+    font-weight: bold;
+    background-color: #81126d;
+    
+}
+
+.card-body{
+    width: 500px;
+
+}
+
+.imagem img{
+    width: 100%;
+}
+
+h1{
+    text-align: center;
+    padding-bottom: 10px;
+}
