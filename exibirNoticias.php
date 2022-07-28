@@ -64,5 +64,9 @@ while ($tabela = mysqli_fetch_object($sql)) {
     echo "<p><a id='meio' href='edicaoNoticias.php?id=$tabela->ID'>Editar</a></p><br><br><br><br>";
 }
 
+if ($sql->num_rows == 0) {
+    echo "<h2 style='color:#ffffff'>Você não criou nenhuma notícia ainda 😔</h2>";
+}
+
 
 ?>

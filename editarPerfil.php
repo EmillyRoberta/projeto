@@ -62,7 +62,7 @@ if (isset($_SESSION['id_email'])) {
     </nav>
 
 
-    <div class="container-fluid d-flex justify-content-center align-items-center" style="height:100%">
+    <div class="container-fluid d-flex justify-content-center mt-5" style="height:100%">
         <div class="card shadow-sm bg-white rounded">
             <div class="card-body">
                 <h1>Editar Perfil</h1>
