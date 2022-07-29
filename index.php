@@ -61,7 +61,6 @@
                                     LIMIT $inicio, $itens_pagina "); //realiza uma consulta a partir do id do email
 
 
-
         $num_paginas = mysqli_query($conn, "SELECT * FROM noticias")->num_rows;  //pega o numero de noticias na tabela
         $num_final = ceil($num_paginas / $itens_pagina);       //arrendoda o valor 
 

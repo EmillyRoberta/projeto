@@ -42,6 +42,9 @@ $idN = filter_input(INPUT_GET, "id", FILTER_SANITIZE_NUMBER_INT); //captura o id
 
                 <?php
 
+                session_start();
+
+
                 include("connect.inc.php");
 
                 $id = filter_input(INPUT_GET, "id", FILTER_SANITIZE_NUMBER_INT); //captura o id do evento passado pelo href
@@ -49,15 +52,14 @@ $idN = filter_input(INPUT_GET, "id", FILTER_SANITIZE_NUMBER_INT); //captura o id
 
                 $sql = mysqli_query($conn, "SELECT n.Titulo, n.Texto, u.Nome, n.Imagem, n.ID, u.Pontos FROM noticias as n
                             INNER JOIN usuarios as u
-                            ON n.ID = $id LIMIT 1"); //realiza uma consulta a partir do id do email
-
+                            ON  n.ID_Usuario = u.ID  AND n.ID = $id LIMIT 1"); //realiza uma consulta a partir do id do email
 
                 // Printa as informações da tabela
                 while ($tabela = mysqli_fetch_object($sql)) {
-
                     echo "<div class='imagem'><img src='$tabela->Imagem"  . "' alt='Foto de exibição ' /></div>";
                     echo "</br><h1>$tabela->Titulo</h1>";
                     echo "<p>Texto da postagem: $tabela->Texto</p>";
+
                     echo "<p>Autor: $tabela->Nome</p>";
                     echo "<p>Pontos Na Rede: $tabela->Pontos</p>";
                     echo "<div class='d-flex justify-content-center mt-5'> <a href='contabilizaReacao.php?reac=0&id=$idN' ><img src='img/buttons/like.png"  . "'/> </a>";
