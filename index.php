@@ -20,9 +20,9 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav">
-                <a class="nav-item nav-link active" href="index.php">Pagina Inicial <span class="sr-only">(Página atual)</span></a>
-                <a class="nav-item nav-link" href="cadastroNoticias.php">Postar Noticia</a>
-                <a class="nav-item nav-link" href="exibirNoticias.php">Editar Noticias</a>
+                <a class="nav-item nav-link active" href="index.php">Página Inicial <span class="sr-only">(Página atual)</span></a>
+                <a class="nav-item nav-link" href="cadastroNoticias.php">Postar Notícia</a>
+                <a class="nav-item nav-link" href="exibirNoticias.php">Editar Notícia</a>
                 <a class="nav-item nav-link" href="editarPerfil.php">Editar Perfil</a>
                 <a class="nav-item nav-link" href="listagem.service.php">Listagens</a>
                 <a class="nav-item nav-link" href="ranking.php">Ranking</a>
@@ -50,7 +50,7 @@
         while ($tabela = mysqli_fetch_object($sql)) {
 
             // Exibi a foto
-            echo "<div class='card shadow-sm bg-white rounded'><div class='card-body'><div class='row'><div class='col-5'><img src='$tabela->Imagem"  . "' alt='Foto de exibição ' /></div><br />";
+            echo "<div class='card shadow-sm bg-white rounded'><div class='card-body'><div class='row'><div class='col-5'><img style='width:200px; height:200px;' src='$tabela->Imagem"  . "' alt='Foto de exibição ' /></div><br />";
             echo "<div class='col-7'>Texto da postagem: $tabela->Texto<br>";
             echo "</br>Autor: $tabela->Nome<br>";
             echo "</br>Pontos Na Rede: $tabela->Pontos<br>";
