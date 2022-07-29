@@ -43,6 +43,10 @@ if ($reacao == 2) {
     $sql = mysqli_query($conn, "UPDATE usuarios 
                                     SET Pontos = Pontos - 4
                                     WHERE ID = $userID");
+
+    $sql2 = mysqli_query($conn, "UPDATE noticias 
+                                 SET Fake = 1
+                                 WHERE ID = $IDNoticia");
 }
 
 echo ("<p>Reação Computada com Sucesso</p>");

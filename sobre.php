@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html style="height:100%;" lang="en">
 
 <head>
     <meta charset="UTF-8">
@@ -21,9 +21,9 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav">
-                    <a class="nav-item nav-link active" href="index.php">Pagina Inicial <span class="sr-only">(Página atual)</span></a>
-                    <a class="nav-item nav-link" href="cadastroNoticias.php">Postar Noticia</a>
-                    <a class="nav-item nav-link" href="exibirNoticias.php">Editar Noticias</a>
+                    <a class="nav-item nav-link active" href="index.php">Página Inicial <span class="sr-only">(Página atual)</span></a>
+                    <a class="nav-item nav-link" href="cadastroNoticias.php">Postar Notícia</a>
+                    <a class="nav-item nav-link" href="exibirNoticias.php">Editar Notícia</a>
                     <a class="nav-item nav-link" href="editarPerfil.php">Editar Perfil</a>
                     <a class="nav-item nav-link" href="listagem.service.php">Listagens</a>
                     <a class="nav-item nav-link" href="ranking.php">Ranking</a>
@@ -33,16 +33,45 @@
         </nav>
     </div>
 
-    <h1 style="color: white" ;>Sobre</h1>
-    <h5 style="color: white" ;>Nome, matrícula e e-mail dos integrantes do grupo:</h5>
-    <?php
+    <div class="container-fluid d-flex mt-5 justify-content-center align-items-center" style="flex-direction: column;height:100%">
+        <div class='card shadow-sm bg-white rounded'>
+            <div class='card-body'>
 
-    echo "<p>Matrícula: 5978<br>Nome: Emilly Roberta da Silva<br>E-mail: emilly.silva@ufv.br</p>";
-    echo "<br><br>";
-    echo "<p>Matrícula: 5960<br>Nome: Jeanluca Martins de Abreu<br>E-mail: jeanluca.abreu@ufv.br</p>";
-    echo "<br><br>";
-    echo "<p>Matrícula: 6020 <br>Nome: Gabriel Henrique Gontijo Basílio<br>E-mail: gabriel.basilio@ufv.br</p>";
-    ?>
+                <h1 style="text-align:center;margin-bottom:30px">Sobre</h1>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">Nome</th>
+                            <th scope="col">Email</th>
+                            <th scope="col">Matricula</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Emilly Silva</td>
+                            <td>emilly.silva@ufv.br</td>
+                            <td>5978</td>
+
+                        </tr>
+                        <tr>
+                            <td>Gabriel Basílio</td>
+                            <td>gabriel.basilio@ufv.br</td>
+                            <td>6020</td>
+
+                        </tr>
+                        <tr>
+                            <td>Jeanluca Martins</td>
+                            <td>jeanluca.abreu@ufv.br</td>
+
+                            <td>5960</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+
 </body>
 
 </html>
