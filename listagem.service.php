@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html style="height:100%;" lang="en">
 
 <head>
     <meta charset="UTF-8">
@@ -13,7 +13,7 @@
     <title>listagem</title>
 </head>
 
-<body style="height:100%;">
+<body>
     <?php
     session_start();
     include('connect.inc.php');
@@ -50,7 +50,7 @@
 
     <div class="container-fluid d-flex justify-content-center align-items-center" style="height:100%">
         <div class="card shadow-sm bg-white rounded mt-5" style=" width: 700px;">
-            <h1>Listagens (Relatórios)</h1>
+            <h1 style="text-align: center;margin-top:30px;margin-bottom:30px">Listagens (Relatórios)</h1>
             <hr>
 
             <nav>
@@ -104,7 +104,7 @@
                                 while ($dataa = mysqli_fetch_assoc($noticias)) {
                                     echo "<tr>";
                                     echo "<td>" . $dataa['Titulo'] . "</td>";
-                                    echo "<td>" . $dataa['Texto'] . "</td>";                                    
+                                    echo "<td>" . $dataa['Texto'] . "</td>";
                                     echo "<th scope='row'>" . $dataa['ID_Usuario'] . "</th>";
                                 }
                                 ?>
@@ -141,7 +141,8 @@
                             <thead>
                                 <tr>
                                     <th scope="col">Título</th>
-                                    <th scope="col">Notícia falsa?</tr>
+                                    <th scope="col">Notícia falsa?
+                                </tr>
                                 </tr>
                             </thead>
                             <tbody>
@@ -149,9 +150,9 @@
                                 while ($dataa = mysqli_fetch_assoc($noticiasFake)) {
                                     echo "<tr>";
                                     echo "<td>" . $dataa['Titulo'] . "</td>";
-                                    if($dataa['Fake']==1){
+                                    if ($dataa['Fake'] == 1) {
                                         echo "<td>Esta notícia é falsa</td>";
-                                    }else{
+                                    } else {
                                         echo "<td>Esta notícia não é falsa</td>";
                                     }
                                 }
