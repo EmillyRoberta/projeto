@@ -65,7 +65,7 @@ $idN = filter_input(INPUT_GET, "id", FILTER_SANITIZE_NUMBER_INT); //captura o id
                     echo "<a href='contabilizaReacao.php?reac=1&id=$idN'><img src='img/buttons/dislike.png"  . "' alt='Foto de exibição '/> </a>";
                     echo "&nbsp;&nbsp;&nbsp;&nbsp;";
                     echo "<a href='contabilizaReacao.php?reac=2&id=$idN'><img src='img/buttons/fake.png"  . "' alt='Foto de exibição '</a></div><br />";
-                    echo "<p><a id='meio' href='edicaoNoticias.php?id=$tabela->ID'>Voltar</a></p>";
+                    echo "<p><a id='meio' href='index.php?id=$tabela->ID'>Voltar</a></p>";
                 }
                 ?>
             </div>
