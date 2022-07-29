@@ -41,7 +41,7 @@
 
         //pega o id atual da pagina
         $pagina = filter_input(INPUT_GET, "pagina", FILTER_SANITIZE_NUMBER_INT);
-        
+
         //estabelece quantos itens serão exibidos por pagina
         $itens_pagina = 5;
 
@@ -68,7 +68,7 @@
         while ($tabela = mysqli_fetch_object($sql)) {
 
             // Exibi a foto
-            echo "<div class='card shadow-sm bg-white rounded'><div class='card-body'><div class='row'><div class='col-5'><img src='$tabela->Imagem"  . "' alt='Foto de exibição ' /></div><br />";
+            echo "<div class='card shadow-sm bg-white rounded'><div class='card-body'><div class='row'><div class='col-5'><img style='width: 200px;height:200px'src='$tabela->Imagem"  . "' alt='Foto de exibição ' /></div><br />";
             echo "<div class='col-7'> <div style='white-space: nowrap; width: 20em; overflow: hidden; text-overflow: ellipsis'; >Texto da postagem: $tabela->Texto</div><br>";
             echo "</br>Autor: $tabela->Nome<br>";
             echo "</br>Pontos Na Rede: $tabela->Pontos<br>";
@@ -84,8 +84,8 @@
 
 
         if ($page_cont != 1) {        //printa o link para direcionar a primeira pagina
-            echo "<a href='index.php?pagina=1'> <- Primeira </a>";
-            
+            echo "<div class='container text-center'>
+            <div class='row align-items-start'><div class='col'><a href='index.php?pagina=1'> <- Primeira </a></div>";
         }
 
         for ($page_ant = $page_cont - $qnts_antes; $page_ant <= $page_cont - 1; $page_ant++) {   //printa o link das paginas anteriores a atual
@@ -106,8 +106,7 @@
         }
 
         if ($page_cont != $num_final) {   //printa o caminho para direcionar a ultima pagina
-            echo " <a href='index.php?pagina=$num_final'> Ultima -> </a> ";
-           
+            echo " <a href='index.php?pagina=$num_final'> Ultima -> </a>";
         }
 
 
