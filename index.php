@@ -69,7 +69,7 @@
 
             // Exibi a foto
             echo "<div class='card shadow-sm bg-white rounded'><div class='card-body'><div class='row'><div class='col-5'><img src='$tabela->Imagem"  . "' alt='Foto de exibição ' /></div><br />";
-            echo "<div class='col-7'> <div white-space: nowrap; width: 20em; overflow: hidden; text-overflow: ellipsis; >Texto da postagem: $tabela->Texto<br>";
+            echo "<div class='col-7'> <div style='white-space: nowrap; width: 20em; overflow: hidden; text-overflow: ellipsis'; >Texto da postagem: $tabela->Texto</div><br>";
             echo "</br>Autor: $tabela->Nome<br>";
             echo "</br>Pontos Na Rede: $tabela->Pontos<br>";
             echo "<div class='d-flex justify-content-center mt-4'><a id='meio' href='reacoesNoticias.php?id=$tabela->ID'>Ver Mais</a></div></div></div></div></div><br /><br />";
