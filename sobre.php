@@ -33,16 +33,45 @@
         </nav>
     </div>
 
-    <h1 style="color: white" ;>Sobre</h1>
-    <h5 style="color: white" ;>Nome, matrícula e e-mail dos integrantes do grupo:</h5>
-    <?php
+    <div class="container-fluid d-flex mt-5 justify-content-center align-items-center" style="flex-direction: column;height:100%">
+        <div class='card shadow-sm bg-white rounded'>
+            <div class='card-body'>
 
-    echo "<p>Matrícula: 5978<br>Nome: Emilly Roberta da Silva<br>E-mail: emilly.silva@ufv.br</p>";
-    echo "<br><br>";
-    echo "<p>Matrícula: 5960<br>Nome: Jeanluca Martins de Abreu<br>E-mail: jeanluca.abreu@ufv.br</p>";
-    echo "<br><br>";
-    echo "<p>Matrícula: 6020 <br>Nome: Gabriel Henrique Gontijo Basílio<br>E-mail: gabriel.basilio@ufv.br</p>";
-    ?>
+                <h1 style="text-align:center;margin-bottom:30px">Sobre</h1>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">Nome</th>
+                            <th scope="col">Email</th>
+                            <th scope="col">Matricula</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Emilly Silva</td>
+                            <td>emilly.silva@ufv.br</td>
+                            <td>5978</td>
+
+                        </tr>
+                        <tr>
+                            <td>Gabriel Basílio</td>
+                            <td>gabriel.basilio@ufv.br</td>
+                            <td>6020</td>
+
+                        </tr>
+                        <tr>
+                            <td>Jeanluca Martins</td>
+                            <td>jeanluca.abreu@ufv.br</td>
+
+                            <td>5960</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+
 </body>
 
 </html>

@@ -65,7 +65,7 @@ if (isset($_SESSION['id_email'])) {
     <div class="container-fluid d-flex justify-content-center mt-5" style="height:100%">
         <div class="card shadow-sm bg-white rounded">
             <div class="card-body">
-                <h1>Editar Perfil</h1>
+                <h1 style="text-align: center;margin-bottom:30px">Editar Perfil</h1>
                 <p><?php
 
                     if (isset($_SESSION['mensagem'])) {

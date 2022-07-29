@@ -104,7 +104,7 @@
                                 while ($dataa = mysqli_fetch_assoc($noticias)) {
                                     echo "<tr>";
                                     echo "<td>" . $dataa['Titulo'] . "</td>";
-                                    echo "<td>" . $dataa['Texto'] . "</td>";
+                                    echo "<td><div style='white-space: nowrap; width: 20em; overflow: hidden; text-overflow: ellipsis'; >" . $dataa['Texto'] . "</div></td>";
                                     echo "<th scope='row'>" . $dataa['ID_Usuario'] . "</th>";
                                 }
                                 ?>
