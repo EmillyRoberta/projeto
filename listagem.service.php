@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html style="height:100%;" lang="en">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
@@ -13,14 +13,14 @@
     <title>listagem</title>
 </head>
 
-<body>
+<body style="height:100%;">
     <?php
     session_start();
     include('connect.inc.php');
     $ID = filter_input(INPUT_GET, 'ID', FILTER_SANITIZE_NUMBER_INT);
     $usuariosSQL = "SELECT * FROM usuarios ORDER BY ID DESC";
     $noticiasSQL = "SELECT * FROM noticias ORDER BY ID DESC";
-    $rankingSQL = "SELECT ID, Pontos FROM usuarios ORDER BY ID";
+    $rankingSQL = "SELECT ID, Nome, Pontos FROM usuarios ORDER BY ID";
     $fakeSQL = "SELECT Titulo, Fake FROM noticias ORDER BY ID DESC";
     $usuarios = $conn->query($usuariosSQL);
     $noticias = $conn->query($noticiasSQL);
@@ -119,6 +119,7 @@
                             <thead>
                                 <tr>
                                     <th scope="col">ID</th>
+                                    <th scope="col">Nome</th>
                                     <th scope="col">Pontos</th>
                                 </tr>
                             </thead>
@@ -127,6 +128,7 @@
                                 while ($dataa = mysqli_fetch_assoc($noticiasRanking)) {
                                     echo "<tr>";
                                     echo "<th scope='row'>" . $dataa['ID'] . "</th>";
+                                    echo "<td>" . $dataa['Nome'] . "</td>";
                                     echo "<td>" . $dataa['Pontos'] . "</td>";
                                 }
                                 ?>
@@ -140,7 +142,7 @@
                         <table class="table table-sm">
                             <thead>
                                 <tr>
-                                    <th scope="col">Título</th>
+                                    <th scope="col">Nome</th>
                                     <th scope="col">Notícia falsa?
                                 </tr>
                                 </tr>
